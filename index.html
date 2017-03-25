@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Starbucks ideas</title>
+    <style>
+      @font-face {
+        font-family: 'Santana-Black';
+        src:  url('./assets/fonts/Santana-Black.ttf.woff') format('woff'),
+        url('./assets/fonts/Santana-Black.ttf.svg#Santana-Black') format('svg'),
+        url('./assets/fonts/Santana-Black.ttf.eot'),
+        url('./assets/fonts/Santana-Black.eot?#iefix') format('embedded-opentype'); 
+        font-weight: normal;
+        font-style: normal;
+      }
+      </style>
+  </head>
+  <body>
+    <div>
+      <!--<button onclick="addOrder()">Add order</button>-->
+    </div>
+    <svg width="640" height="480" style="position:absolute;">
+    </svg>
+    <video id="video" autoplay="true" style="display:none;"></video>
+    <canvas id="canvas" style="width:640px; height:480px;"></canvas>
+
+    <script src="https://d3js.org/d3.v4.min.js"></script>
+    <script src="./assets/js/cv.js"></script>
+    <script src="./assets/js/aruco.js"></script>
+    <script src="build/bundle.js"></script>
+  </body>
+</html>

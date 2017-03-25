@@ -1,0 +1,25 @@
+{
+  "name": "sbux",
+  "version": "1.0.0",
+  "description": "Some fun ideas for Starbucks",
+  "main": "index.js",
+  "scripts": {
+    "build": "./node_modules/webpack/bin/webpack.js --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/markdaws/sbux.git"
+  },
+  "author": "Mark Dawson",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/markdaws/sbux/issues"
+  },
+  "homepage": "https://github.com/markdaws/sbux#readme",
+  "devDependencies": {
+    "@types/d3": "^4.7.0",
+    "ts-loader": "^2.0.3",
+    "typescript": "^2.2.1",
+    "webpack": "^2.3.1"
+  }
+}

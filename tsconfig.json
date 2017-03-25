@@ -1,0 +1,27 @@
+{
+    "compilerOptions": {
+        "target": "es2015",
+        "module": "commonjs",
+        "jsx": "react",
+        "outDir": "build",
+        "rootDir": "src",
+        "allowSyntheticDefaultImports": true,
+        "noImplicitAny": true,
+        "experimentalDecorators": true,
+        "preserveConstEnums": true,
+        "allowJs": true,
+        "sourceMap": true
+    },
+    "filesGlob": [
+        "typings/index.d.ts",
+        "src/**/*.ts",
+        "src/**/*.tsx"
+    ],
+    "exclude": [
+        "build",
+        "node_modules",
+        "tslint",
+        "webpack.config.js"
+    ],
+    "compileOnSave": false
+}
