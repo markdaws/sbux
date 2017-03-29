@@ -1,0 +1,28 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+
+#surface {
+  display: block;
+  background-color: #000;
+  position: absolute;
+  border: 1px solid #fff;
+  top: 0;
+  left: 0;
+}
+
+#surface.debug {
+  border: 1px solid #f00;
+}
+
+#video {
+  display:none;
+}
+
+#canvas {
+  /*display:none;*/
+  position: absolute;
+  /*top: 500px;*/
+  opacity: 0.5;
+}

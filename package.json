@@ -18,6 +18,7 @@
   "homepage": "https://github.com/markdaws/sbux#readme",
   "devDependencies": {
     "@types/d3": "^4.7.0",
+    "@types/three": "^0.84.3",
     "ts-loader": "^2.0.3",
     "typescript": "^2.2.1",
     "webpack": "^2.3.1"

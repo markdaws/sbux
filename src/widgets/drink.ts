@@ -1,20 +1,20 @@
-import { Marker } from './tracker'
-import Order from './order'
+import { Marker } from '../tracker'
+import Order from '../order'
 
 // TODO: Fix types
 declare var d3: any;
 
 const innerArc: any = d3.arc()
-  .innerRadius(90)
-  .outerRadius(140)
+  .innerRadius(150)
+  .outerRadius(200)
   .startAngle(2 * Math.PI)
 
 const outerArc: any = d3.arc()
-  .innerRadius(148)
-  .outerRadius(144)
+  .innerRadius(208)
+  .outerRadius(204)
   .startAngle(2 * Math.PI)
 
-export default class DrinkWidget {
+export default class Drink {
 
   public static setup(svg: any) {
     const radialGradient = svg.append("defs")
@@ -37,7 +37,8 @@ export default class DrinkWidget {
 
   public static existing(items: any, orderFromMarkerId: (markerId: string) => Order) {
     items.attr('transform', (d: Marker) => {
-      return `translate(${d.cx},${d.cy}) scale(0.5)`
+      //console.log(`existing: ${d.id} - translate(${d.cx},${d.cy}) scale(0.5)`)
+      return `translate(${Math.floor(d.px)},${Math.floor(d.py)}) scale(0.5)`
     })
   }
 
@@ -46,7 +47,8 @@ export default class DrinkWidget {
       .append('g')
       .classed('item', true)
       .attr('transform', (d: Marker) => {
-        return `translate(${d.cx},${d.cy}) scale(0.5)`
+        //console.log(`entering - ${d.id}`)
+        return `translate(${d.px},${d.py}) scale(0.5)`
       })
       .append('g')
 
@@ -83,7 +85,14 @@ export default class DrinkWidget {
       .attr('d', innerArc)
       .transition()
       .duration(1000)
-      .attrTween("d", DrinkWidget.arcTween(innerArc, 0 * 2 * Math.PI));
+      .attrTween("d", Drink.arcTween(innerArc, 0 * 2 * Math.PI));
+
+    const center = items
+      .append('circle')
+      .attr('cx', 0)
+      .attr('cy', 0)
+      .attr('r', 10)
+      .attr('fill', 'red')
 
     const name = items
       .append('text')
@@ -118,11 +127,11 @@ export default class DrinkWidget {
       .transition()
       .delay(200)  
       .duration(1000)
-      .attrTween("d", DrinkWidget.arcTween(outerArc, 0 * Math.PI));
+      .attrTween("d", Drink.arcTween(outerArc, 0 * Math.PI));
   }
 
   public static exit(items: any, orderFromMarkerId: (markerId: string) => Order) {
-    //items.remove((d: Marker) => console.log(`removing marker: ${d.id}`))
+    //items.attr('foo', ((d: Marker) => console.log(`removing marker: ${d.id}`)))
     //return
     /*
     items.transition()

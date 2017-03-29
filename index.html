@@ -13,19 +13,28 @@
         font-style: normal;
       }
       </style>
+      <link rel="stylesheet" href="src/main.css" />
   </head>
   <body>
     <div>
       <!--<button onclick="addOrder()">Add order</button>-->
     </div>
-    <svg width="640" height="480" style="position:absolute;">
+    <svg width="800" height="480" id="surface">
+      <g class="queue" transform="scale(0.2)">
+        <rect x="0" y="1600" height="800" width="3500" fill="white" />
+        <!--<image xlink:href="assets/img/cup.png" />-->
+      </g>
+
+      <line x1="390" y1="240" x2="410" y2="240" style="stroke:#f00;stroke-width:2;" />
+      <line x1="400" y1="230" x2="400" y2="250" style="stroke:#f00;stroke-width:2;" />
     </svg>
-    <video id="video" autoplay="true" style="display:none;"></video>
-    <canvas id="canvas" style="width:640px; height:480px;"></canvas>
+    <video id="video" autoplay="true"></video>
+    <canvas id="canvas"></canvas>
 
     <script src="https://d3js.org/d3.v4.min.js"></script>
     <script src="./assets/js/cv.js"></script>
     <script src="./assets/js/aruco.js"></script>
+    <script src="./assets/js/three.min.js"></script>
     <script src="build/bundle.js"></script>
   </body>
 </html>
